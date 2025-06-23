@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f0f1a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #0dcaf0;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: #ffffff;
+            color: #0f0f1a;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e0e0e0;
+        }
+         .btn {
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: #0f0f1a;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block; 
+}
+
+
+        
+    </style>
+</head>
+<body>
+    <h1>Welcome Vishal Rathore</h1>
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+         <a href="{% url 'password_change' %}" class="btn">Change Password with old password</a>
+         <a href="{% url 'password_change1' %}" class="btn">change Password without old password</a>
+
+    </form>
+</body>
+</html>
